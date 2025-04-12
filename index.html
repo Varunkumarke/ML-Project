@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>House Price Prediction</h1>
+    <form action="{{ url_for('predict') }}" method="POST">
+        <input type="text" name="Living area" placeholder="Living area" required>
+        <input type="text" name="Bathrooms" placeholder="Bathrooms" required>
+        <input type="text" name="Bedrooms" placeholder="Bedrooms" required>
+        <input type="text" name="Lot size" placeholder="Lot size" required>
+        <input type="text" name="Age" placeholder="Age" required>
+        <input type="text" name="Fireplace" placeholder="Fireplace" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    <h1 id="predi">
+        {{ prediction_text }}
+    </h1>
+
+</body>
+</html>
